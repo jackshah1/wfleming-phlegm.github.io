@@ -66,7 +66,7 @@
     padding: 26px 0;
   }
 
-  nav.top img { height: 58px; display: block; }
+  nav.top img { height: 76px; display: block; }
 
   .nav-links { display: flex; gap: 36px; }
 
@@ -560,21 +560,22 @@
   .shine-text {
     background: linear-gradient(
       100deg,
-      var(--ink) 40%,
+      var(--ink) 0%,
+      var(--ink) 35%,
       var(--gold) 50%,
-      var(--ink) 60%
+      var(--ink) 65%,
+      var(--ink) 100%
     );
     background-size: 250% 100%;
-    background-position: 100% 0;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: shine 5s ease-in-out infinite;
+    animation: shine 6s linear infinite;
   }
 
   @keyframes shine {
-    0%, 40% { background-position: 100% 0; }
-    60%, 100% { background-position: -100% 0; }
+    0% { background-position: 200% 0; }
+    100% { background-position: -100% 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -613,6 +614,10 @@
           for this one since Kirby is Nintendo's IP — not something to ship
           even as a stand-in on a commercial site. Once you have a real
           OneSpin .glb export, just change the src below.
+
+          (The KitchenAid mixer model from earlier is intentionally not
+          used here — that was for local/branch testing only, not for the
+          live site, since it's a real competitor's branded product.)
         -->
         <model-viewer id="hero-model"
           src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
